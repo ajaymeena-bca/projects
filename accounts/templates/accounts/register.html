@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link href="https://unpkg.com/tailwindcss@^2.0.0/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+
+
+  <div class="w-full max-w-md mx-auto mt-6" style="margin-top: 10rem; padding: 5%">
+    <h1 class="text-center mb-4">Sign Up</h1>
+
+    <form class="flex flex-col gap-6 align-items-center" method="post">
+        
+         {% csrf_token %}
+        
+         {% include "alert.html" %}
+
+      <input type="text" class="w-full px-4 py-2 border-b-2 border-gray-300 rounded-md" placeholder="First Name" name = "first_name">
+      <input type="text" class="w-full px-4 py-2 border-b-2 border-gray-300 rounded-md" placeholder="Last Name" name="last_name">
+      <input type="email" class="w-full px-4 py-2 border-b-2 border-gray-300 rounded-md" placeholder="Email" name="email">
+      <input type="password" class="w-full px-4 py-2 border-b-2 border-gray-300 rounded-md" placeholder="Password" name = "password">
+      <button class="w-full px-4 py-2 bg-blue-500 text-white rounded-md" type="submit">Sign Up</button>
+
+      <div class="mt-4 text-center">
+        <p class="text-sm">
+          Already have account
+          <a href="#" class="text-blue-600 hover:underline">
+            Log in.</a
+          >
+        </p>
+      </div>
+    </form>
+  </div>
+
+
+
+</body>
+</html>

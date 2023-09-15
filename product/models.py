@@ -1,63 +1,21 @@
 from django.db import models
 from base.models import BaseModel
-
 # Create your models here.
 
 
-# class Category(BaseModel):
-            
+class Category(BaseModel):
+    category_name = models.CharField(max_length=100)
+    slug = models.SlugField(unique=True , null=True , blank=True)
+    category_image = models.ImageField(upload_to="catgories")
 
 
+    def save(self , *args , **kwargs):
+        self.slug = slugify(self.category_name)
+        super(Category ,self).save(*args , **kwargs)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# class Category(BaseModel):
-#     category_name = models.CharField(max_length=100)
-#     slug = models.SlugField(unique=True , null=True , blank=True)
-#     category_image = models.ImageField(upload_to="catgories")
-
-
-#     def save(self , *args , **kwargs):
-#         self.slug = slugify(self.category_name)
-#         super(Category ,self).save(*args , **kwargs)
-
-
-#     def __str__(self) -> str:
-#         return self.category_name
+    def __str__(self) -> str:
+        return self.category_name
 
 
 # class ColorVariant(BaseModel):

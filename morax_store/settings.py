@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'product.apps.ProductConfig',
+    'accounts.apps.AccountsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -135,3 +136,29 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+#for email seding
+
+# EMAIL_BACKED = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'stmp.gmail.com'
+# EMAIL_USE_TLS = True
+# EMAIL_PORT = 587
+
+# EMAIL_HOST_USER = 'saurabhmeena54321@gmail.com'
+# EMAIL_HOST_PASSWORD = '8955587760' 
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'aprivate710@gmail.com'
+EMAIL_HOST_PASSWORD = 'Rj2530082003'
+
+
+# EMAIL_USE_TLS = True
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_HOST_USER = 'youremail@gmail.com'
+# EMAIL_HOST_PASSWORD = 'yourpassword'
+# EMAIL_PORT = ????
+
